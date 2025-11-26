@@ -4,23 +4,24 @@ import Fab from "./component/fab.jsx";
 import Poster from "./component/poster.jsx";
 import OneMain from "./component/oneMain.jsx";
 import TwoMain from "./component/twoMain.jsx";
-import Achivements from "./component/achivments.jsx";
-import Review from "./component/review.jsx";
+import Slider from "./component/slider.jsx";
 import Faq from "./component/faq.jsx";
 import Footer from "./component/footer.jsx";
-import Map from './component/map.jsx'
+import Map from "./component/map.jsx";
+import ThreeMain from "./component/threeMain.jsx";
 const App = () => {
   return (
     <>
       <div className="scroll-smooth overflow-hidden">
-        <Hero />
         <Poster />
+        <Hero />
+        <Slider />
         <OneMain />
         <TwoMain />
-        <Achivements />
+        <ThreeMain />
         <Faq />
-        <Review />
-<Map/>
+
+        <Map />
         <Footer />
 
         <Fab />

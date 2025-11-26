@@ -1,163 +1,184 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import avatar from "../assets/avatar.png";
 import { motion } from "framer-motion";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 const review = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, }}
-      whileInView={{ opacity: 1}}
-      transition={{ duration: 1 }}
-      viewport={{ once: true, amount: 0.5 }}
-      className="flex justify-baseline items-center bg-base-200  py-10 px-20"
+    <Swiper
+      spaceBetween={30}
+      centeredSlides={true}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      modules={[Autoplay, Pagination, Navigation]}
+      className="flex items-center justify-center    bg-white rounded-2xl shadow-md "
     >
-      <div className="flex sm:flex-row flex-col gap-2 ">
-        {/* First reviews  */}
-        <div className="bg-white rounded-2xl shadow-md py-5 px-2">
-          <div className="flex gap-2 items-center">
-            <div className="avatar">
-              <div className="w-10 rounded-full">
-                <img src={avatar} />
-              </div>
-            </div>
-            <h1>Rohit Sharma </h1>
-          </div>
-          <div className="rating rating-sm">
-            <input
-              type="radio"
-              name="rating-4"
-              className="mask mask-star-2 bg-orange-400"
-              aria-label="1 star"
-            />
-            <input
-              type="radio"
-              name="rating-4"
-              className="mask mask-star-2 bg-orange-400"
-              aria-label="2 star"
-            />
-            <input
-              type="radio"
-              name="rating-4"
-              className="mask mask-star-2 bg-orange-400"
-              aria-label="3 star"
-            />
-            <input
-              type="radio"
-              name="rating-4"
-              className="mask mask-star-2 bg-orange-400"
-              aria-label="4 star"
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="rating-4"
-              className="mask mask-star-2 bg-orange-400"
-              aria-label="5 star"
-            />
-          </div>
-          <div className="pt-5">
+      {/* First reviews  */}
+      <SwiperSlide className=" py-5 px-2">
+        <div className="pt-5 font-semibold py-10 px-5 text-2xl text-left">
+          <q>
+            {" "}
             Supportive space that boosts focus, encourages teamwork, and
             improves learning.
-          </div>
+          </q>{" "}
         </div>
-        {/* First reviews  */}
-        <div className="bg-white rounded-2xl shadow-md py-5 px-2">
-          <div className="flex gap-2 items-center">
-            <div className="avatar">
-              <div className="w-10 rounded-full">
-                <img src={avatar} />
-              </div>
+        <div className="flex flex-col gap-2 items-center">
+          <div className="avatar">
+            <div className="w-20  rounded-full">
+              <img src={avatar} />
             </div>
-            <h1>Prakash </h1>
           </div>
-          <div className="rating rating-sm">
-            <input
-              type="radio"
-              name="rating-2"
-              className="mask mask-star-2 bg-orange-400"
-              aria-label="1 star"
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              className="mask mask-star-2 bg-orange-400"
-              aria-label="2 star"
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              className="mask mask-star-2 bg-orange-400"
-              aria-label="3 star"
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              className="mask mask-star-2 bg-orange-400"
-              aria-label="4 star"
-            />
-            <input
-              type="radio"
-              name="rating-5"
-              className="mask mask-star-2 bg-orange-400"
-              aria-label="5 star"
-              defaultChecked
-            />
-          </div>
-          <div className="pt-5">
+          <h1 className="text-md font-medium underline underline-offset-2">
+            Rohit Sharma{" "}
+          </h1>
+        </div>
+        <div className="rating rating-xs flex justify-center">
+          <input
+            type="radio"
+            name="rating-4"
+            className="mask mask-star-2 bg-orange-400"
+            aria-label="1 star"
+          />
+          <input
+            type="radio"
+            name="rating-4"
+            className="mask mask-star-2 bg-orange-400"
+            aria-label="2 star"
+          />
+          <input
+            type="radio"
+            name="rating-4"
+            className="mask mask-star-2 bg-orange-400"
+            aria-label="3 star"
+          />
+          <input
+            type="radio"
+            name="rating-4"
+            className="mask mask-star-2 bg-orange-400"
+            aria-label="4 star"
+            defaultChecked
+          />
+          <input
+            type="radio"
+            name="rating-4"
+            className="mask mask-star-2 bg-orange-400"
+            aria-label="5 star"
+          />
+        </div>
+      </SwiperSlide>
+      {/* First reviews  */}
+      <SwiperSlide className="swiper-slide bg-white rounded-2xl shadow-md py-5 px-2">
+        <div className="pt-5 font-semibold py-10 px-5 text-2xl text-left">
+          <q>
+            {" "}
             Quiet, comfortable room that makes studying easier and more
             enjoyable.
-          </div>
-        </div>{" "}
-        {/* First reviews  */}
-        <div className="bg-white rounded-2xl shadow-md py-5 px-2">
-          <div className="flex gap-2 items-center">
-            <div className="avatar">
-              <div className="w-10 rounded-full">
-                <img src={avatar} />
-              </div>
+          </q>
+        </div>
+        <div className="flex flex-col gap-2 items-center">
+          <div className="avatar">
+            <div className="w-20  rounded-full">
+              <img src={avatar} />
             </div>
-            <h1>Nitin Viyas </h1>
           </div>
-          <div className="rating rating-sm">
-            <input
-              type="radio"
-              name="rating-2"
-              className="mask mask-star-2 bg-orange-400"
-              aria-label="1 star"
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              className="mask mask-star-2 bg-orange-400"
-              aria-label="2 star"
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              className="mask mask-star-2 bg-orange-400"
-              aria-label="3 star"
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              className="mask mask-star-2 bg-orange-400"
-              aria-label="4 star"
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              className="mask mask-star-2 bg-orange-400"
-              aria-label="5 star"
-            />
-          </div>
-          <div className="pt-5">
+          <h1 className="text-md font-medium underline underline-offset-2">
+            Prakash{" "}
+          </h1>
+        </div>
+        <div className="rating rating-xs flex justify-center">
+          <input
+            type="radio"
+            name="rating-2"
+            className="mask mask-star-2 bg-orange-400"
+            aria-label="1 star"
+          />
+          <input
+            type="radio"
+            name="rating-2"
+            className="mask mask-star-2 bg-orange-400"
+            aria-label="2 star"
+          />
+          <input
+            type="radio"
+            name="rating-2"
+            className="mask mask-star-2 bg-orange-400"
+            aria-label="3 star"
+          />
+          <input
+            type="radio"
+            name="rating-2"
+            className="mask mask-star-2 bg-orange-400"
+            aria-label="4 star"
+          />
+          <input
+            type="radio"
+            name="rating-5"
+            className="mask mask-star-2 bg-orange-400"
+            aria-label="5 star"
+            defaultChecked
+          />
+        </div>
+      </SwiperSlide>{" "}
+      {/* First reviews  */}
+      <SwiperSlide className="swiper-slide bg-white rounded-2xl shadow-md py-5 px-2">
+        <div className="pt-5 font-semibold py-10 px-5 text-2xl text-left">
+          <q>
+            {" "}
             Great study environment with calm vibes and helpful peer
             interaction.
-          </div>
+          </q>
         </div>
-      </div>
-    </motion.div>
+        <div className="flex flex-col gap-2 items-center">
+          <div className="avatar">
+            <div className="w-20  rounded-full">
+              <img src={avatar} />
+            </div>
+          </div>
+          <h1 className="text-md font-medium underline underline-offset-2">
+            Nitin Viyas{" "}
+          </h1>
+        </div>
+        <div className="rating rating-xs flex justify-center">
+          <input
+            type="radio"
+            name="rating-2"
+            className="mask mask-star-2 bg-orange-400"
+            aria-label="1 star"
+          />
+          <input
+            type="radio"
+            name="rating-2"
+            className="mask mask-star-2 bg-orange-400"
+            aria-label="2 star"
+            defaultChecked
+          />
+          <input
+            type="radio"
+            name="rating-2"
+            className="mask mask-star-2 bg-orange-400"
+            aria-label="3 star"
+          />
+          <input
+            type="radio"
+            name="rating-2"
+            className="mask mask-star-2 bg-orange-400"
+            aria-label="4 star"
+          />
+          <input
+            type="radio"
+            name="rating-2"
+            className="mask mask-star-2 bg-orange-400"
+            aria-label="5 star"
+          />
+        </div>
+      </SwiperSlide>
+    </Swiper>
   );
 };
 
