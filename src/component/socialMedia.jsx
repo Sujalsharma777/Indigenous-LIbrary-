@@ -7,7 +7,7 @@ const socialMedia = () => {
     const handlesubmit =  (e)=>{
 e.preventDefault()
  const phoneNumber = '+919993718898'; // Replace with your WhatsApp number (with country code)
-        const encodedMessage = "I want to join the library seat";
+        const encodedMessage = "I want to join the library ";
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
         window.open(whatsappUrl, '_blank');
   }
